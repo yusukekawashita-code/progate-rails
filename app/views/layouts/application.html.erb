@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "App" %></title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>TweetApp</title>
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= yield :head %>
-
-    <link rel="manifest" href="/manifest.json">
-    <link rel="icon" href="/icon.png" type="image/png">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/icon.png">
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <header>
+      <div class="header-logo">
+        <%= link_to("TweetApp", "/") %>
+      </div>
+      <ul class="header-menus">
+        <li>
+          <%= link_to("TweetAppとは", "/about") %>
+        </li>
+        <li>
+          <%= link_to("投稿一覧", "/posts/index") %>
+        </li>
+        <li>
+          <%= link_to("新規投稿", "/posts/new") %>
+        </li>
+      </ul>
+    </header>
     <%= yield %>
   </body>
 </html>
