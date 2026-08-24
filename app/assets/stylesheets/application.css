@@ -464,3 +464,12 @@ header {
 .users-form input {
   margin-bottom: 15px;
 }
+
+.logout-link {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+}
